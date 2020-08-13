@@ -2,8 +2,7 @@
 
 #ORF
 
-#Defining orf(dna,frame) so that it can be used for multiple times to get orf for
-#different frame and DNA strand.
+#Defining orf(dna,frame) so that it can be used for multiple times to get all the possible orfs for different frames and DNA strands.
 
 def orf(dna,frame):                                         #defining
     for i in range(frame,len(dna),3):                       #it will start to search three base at a time from the frame(0/1/2) of DNA to the length of DNA
@@ -20,7 +19,7 @@ def orf(dna,frame):                                         #defining
                     print(position1+1, "\t", position2+1, "\t", length, "\t", orf)  #As the ORF is built, it is time to display it to the user with the start, end and it's length.
                     break                                   #As the program gets the stop codon, we don't need to move forward. Since, an ORF finishes in the stop codon.
 
-dna=input('Enter your DNA sequence:').upper()               #ASk the DNA sequence from the user.
+dna=input('Enter your DNA sequence:').upper()               #Ask the user to enter DNA sequence.
 
 print("\n")
 print("\t=========>>> For Leading strand ")                 #As the first part will display only the ORFs from the leading strand (5'-3').
