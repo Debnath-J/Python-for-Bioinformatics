@@ -70,49 +70,6 @@ basecomplement={'A':'T','C':'G','G':'C','T':'A'}
 letters=list(dna)
 dna2=[basecomplement[base] for base in letters]
 dna3="".join(dna2)
-
-def translate(dna3,frame):                                                          #Same functions as before, only here we will use "dna3" (which is the reverese complementary strand of dna) instead of "dna"
-    for i in range(frame,len(dna3),3):
-        codon1=dna3[i:i+3]
-        if codon1=='ATG':
-            position1=i
-            for j in range(position1,len(dna3),3):
-                codon2=dna3[j:j+3]
-                if codon2 in ['TAA','TAG','TGA']:
-                    position2=j
-                    length_orf=(position2-position1)+3
-                    orf=dna3[position1:position2+3]
-                    print(position1+1, "\t", position2+1, "\t", length_orf, "\t", orf)
-
-                    protein=''
-
-                    codon_aa = {"AAA":"K", "AAC":"N", "AAG":"K", "AAT":"N", 
-                                "ACA":"T", "ACC":"T", "ACG":"T", "ACT":"T", 
-                                "AGA":"R", "AGC":"S", "AGG":"R", "AGT":"S",
-                                "ATA":"I", "ATC":"I", "ATG":"M", "ATT":"I", 
-
-                                "CAA":"Q", "CAC":"H", "CAG":"Q", "CAT":"H", 
-                                "CCA":"P", "CCC":"P", "CCG":"P", "CCT":"P",
-                                "CGA":"R", "CGC":"R", "CGG":"R", "CGT":"R", 
-                                "CTA":"L", "CTC":"L", "CTG":"L", "CTT":"L",
-
-                                "GAA":"E", "GAC":"D", "GAG":"E", "GAT":"D", 
-                                "GCA":"A", "GCC":"A", "GCG":"A", "GCT":"A", 
-                                "GGA":"G", "GGC":"G", "GGG":"G", "GGT":"G", 
-                                "GTA":"V", "GTC":"V", "GTG":"V", "GTT":"V", 
-
-                                "TAA":".", "TAC":"Y", "TAG":".", "TAT":"T", 
-                                "TCA":"S", "TCC":"S", "TCG":"S", "TCT":"S", 
-                                "TGA":".", "TGC":"C", "TGG":"W", "TGT":"C", 
-                                "TTA":"L", "TTC":"F", "TTG":"L", "TTT":"F"}
-                    
-                    for i in range(0, len(orf), 3):
-                        codon = orf[i:i+3]
-                        protein += codon_aa[codon]
-
-                    length_protein=len(protein)-1
-                    print("\t\t\t >> (", length_protein, ")", protein)
-                    break
     
 print("\n")
 print("\t For Lagging strand <<<=========")
@@ -129,5 +86,3 @@ print(translate(dna3,1))
 
 print("\n\t\t(3rd Reading frame)\n")
 print(translate(dna3,2)
-
-input("Press The Enter key to exit")
