@@ -47,21 +47,6 @@ letters=list(dna)
 dna2=[basecomplement[base] for base in letters]
 dna3="".join(dna2)                                          # "dna3" will be the reverse complementary strand (3'-5') of the given DNA seq.
 
-def orf(dna3,frame):                                        #Same as previous, except this time program will look for ORFs for "dna3" seq. instead of dna.
-    for i in range(frame,len(dna3),3):
-        codon1=dna3[i:i+3]
-        if codon1=='ATG':
-            position1=i
-            for j in range(position1,len(dna3),3):
-                codon2=dna3[j:j+3]
-                if codon2 in ['TAA','TAG','TGA']:
-                    position2=j
-                    length=(position2-position1)+3
-                    orf=dna3[position1:position2+3]
-                    print(position1+1, "\t", position2+1, "\t", length, "\t", orf)
-                    break
-
-                                                            # All is same like previous table, only here dna3 will be replaced for dna; like (dna3,0) in leu of (dna,0)
 print("From \t To \t Length \t Sequence")                   
 print("===================================================\n")
 
