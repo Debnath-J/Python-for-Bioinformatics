@@ -21,3 +21,5 @@ dna2=[basecomplement[base] for base in letters]                                #
 dna2=''.join(dna2)                                                             #make it a string again, and "dna2" will be the reverse complementary seq. of the given DNA. 
 print("Reverse transcription of your given DNA seqeuence:")
 print(dna2)                                                                    #to show the result
+
+input("Press Enter key to exit_")
