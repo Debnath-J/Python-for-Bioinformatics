@@ -1,6 +1,5 @@
 #Basic Protein Information Program
-#This program will help to get neccessary information from given protein sequence.
-#such as, length of the protein, number of aliphatic, aromatic, acidic, basic, hydroxylic, ulphur containing, amidic - amino acids
+#This program will help to get necessary information from given protein sequence. such as, length of the protein, number of aliphatic, aromatic, acidic, basic, hydroxylic, sulphur containing, amidic - amino acids
 #The program will stop if it finds any invalid amino acids inside the sequence.
 
 protein=input("Enter Your protein sequemce :").upper()                                              #Ask the protein sequence from user.
