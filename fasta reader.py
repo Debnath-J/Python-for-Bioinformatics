@@ -22,22 +22,3 @@ for i in range(1, e):
 	Seq =f1[-1]
 
 	print("Accession Number:", Acc_no, "\nOrganism Name:", Org_name, "\nDetails:", Detail, "\nSequence:", Seq, "\n")
-
-"""
-if c > 1:
-	f = file.split(">")
-
-f1 = f.split()
-A = f1[0]
-Acc_no = A[1:]
-blank = " "
-Org_name = f1[1] + blank + f1[2]
-D = f1[3:-1]
-Detail = ' '.join(map(str, D))
-Seq =f1[-1]
-
-print("Accession Number:", Acc_no, "\nOrganism Name:", Org_name, "\nDetails:", Detail, "\nSequence:", Seq)
-"""
-
-
-	
